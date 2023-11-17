@@ -13,7 +13,7 @@ public class player1 : MonoBehaviour
     float xRotation;
     float yRotation;
 
-    void Start()
+    private void Start()
     {
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
@@ -30,6 +30,12 @@ public class player1 : MonoBehaviour
 
         transform.rotation = Quaternion.Euler(xRotation, yRotation, 0);
         orientation.rotation = Quaternion.Euler(0, yRotation, 0);
+        if (Input.GetKeyDown(KeyCode.Escape))
+        {
+            Cursor.lockState = CursorLockMode.None;
+            Cursor.visible = true;
+
+        }
     }
 
     
